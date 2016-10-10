@@ -252,19 +252,15 @@ install(){
 
         clear
         echo
-        echo "Congratulations, ShadowsocksR install completed!"
-        echo -e "Server IP: \033[41;37m $(get_ip) \033[0m"
-        echo -e "Server Port: \033[41;37m ${shadowsocksport} \033[0m"
-        echo -e "Password: \033[41;37m ${shadowsockspwd} \033[0m"
-        echo -e "Local IP: \033[41;37m 127.0.0.1 \033[0m"
-        echo -e "Local Port: \033[41;37m 1080 \033[0m"
-        echo -e "Protocol: \033[41;37m origin \033[0m"
-        echo -e "obfs: \033[41;37m plain \033[0m"
-        echo -e "Encryption Method: \033[41;37m aes-256-cfb \033[0m"
-        echo
-        echo "Welcome to visit:https://shadowsocks.be/9.html"
-        echo "If you want to change protocol & obfs, please visit reference URL:"
-        echo "https://github.com/breakwa11/shadowsocks-rss/wiki/Server-Setup"
+        echo "配置完成, ShadowsocksR安装完毕!"
+        echo -e "服务器IP: \033[41;37m $(get_ip) \033[0m"
+        echo -e "服务器端口: \033[41;37m ${ports[@]} \033[0m"
+        echo -e "密码: \033[41;37m ${pwd} \033[0m"
+        echo -e "本地IP: \033[41;37m 127.0.0.1 \033[0m"
+        echo -e "本地端口: \033[41;37m 1080 \033[0m"
+        echo -e "协议方式: \033[41;37m auth_sha1_v4_compatible \033[0m"
+        echo -e "混淆方式: \033[41;37m http_simple_compatible \033[0m"
+        echo -e "加密方式: \033[41;37m chacha20 \033[0m"
         echo
         echo "Enjoy it!"
         echo
@@ -312,6 +308,7 @@ uninstall_shadowsocks(){
 
 # Install ShadowsocksR
 install_shadowsocks(){
+	config_shadowsocks
     rootness
     disable_selinux
     pre_install

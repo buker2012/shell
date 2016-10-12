@@ -313,7 +313,6 @@ install_shadowsocks(){
     disable_selinux
     pre_install
     download_files
-    config_shadowsocks
     install
     install_cleanup
 }
